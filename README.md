@@ -1,4 +1,4 @@
-**LISA: Reasoning Segmentation via Large Language Model [[Paper](https://ieeexplore.ieee.org/document/10851315)]** <br />
+**FSVLM: A Vision-Language Model for Remote Sensing Farmland Segmentation[[Paper](https://ieeexplore.ieee.org/document/10851315)]** <br />
 [Haiyang Wu],
 [Zhuofei Du],
 [Dandan Zhong],
