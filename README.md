@@ -81,6 +81,18 @@ If you find this project useful in your research, please consider citing:
   keywords={Image segmentation;Remote sensing;Accuracy;Annotations;Visualization;Deep learning;Crops;Semantics;Semantic segmentation;Data models;Deep learning;farmland segmentation;image-text dataset;semantic segmentation;vision-language model (VLM)},
   doi={10.1109/TGRS.2025.3532960}}
 
+@article{WU2025423,
+title = {FarmSeg_VLM: A farmland remote sensing image segmentation method considering vision-language alignment},
+journal = {ISPRS Journal of Photogrammetry and Remote Sensing},
+volume = {225},
+pages = {423-439},
+year = {2025},
+issn = {0924-2716},
+doi = {https://doi.org/10.1016/j.isprsjprs.2025.05.010},
+url = {https://www.sciencedirect.com/science/article/pii/S0924271625001911},
+author = {Haiyang Wu and Weiliang Mu and Dandan Zhong and Zhuofei Du and Haifeng Li and Chao Tao},
+}
+
 @ARTICLE{
   title={A large-scale image-text dataset benchmark for farmland segmentation},
   author={Chao Tao, Dandan Zhong, Weiliang Mu, Zhuofei Du, Haiyang Wu},
