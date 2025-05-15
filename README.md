@@ -8,7 +8,7 @@
 [Haiyang Wu](https://scholar.google.com/citations?user=VzEne7oAAAAJ&hl=zh-CN),
 [Zhuofei Du],
 [Dandan Zhong],
-[Yuze Wang],
+[Yuze Wang](https://scholar.google.com/citations?hl=zh-CN&user=XptRvWUAAAAJ),
 [Chao Tao](https://scholar.google.com/citations?hl=zh-CN&user=g0Dvu7IAAAAJ)<br />
 
 ## Abstract
