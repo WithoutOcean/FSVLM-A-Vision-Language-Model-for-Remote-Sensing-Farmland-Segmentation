@@ -94,11 +94,15 @@ url = {https://www.sciencedirect.com/science/article/pii/S0924271625001911},
 author = {Haiyang Wu and Weiliang Mu and Dandan Zhong and Zhuofei Du and Haifeng Li and Chao Tao},
 }
 
-@ARTICLE{
-  title={A large-scale image-text dataset benchmark for farmland segmentation},
-  author={Chao Tao, Dandan Zhong, Weiliang Mu, Zhuofei Du, Haiyang Wu},
-  journal={arXiv preprint arXiv:2503.23106},
-  year={2025}
+@Article{essd-2025-184,
+AUTHOR = {Tao, C. and Zhong, D. and Mu, W. and Du, Z. and Wu, H.},
+TITLE = {A large-scale image-text dataset benchmark for farmland segmentation},
+JOURNAL = {Earth System Science Data Discussions},
+VOLUME = {2025},
+YEAR = {2025},
+PAGES = {1--29},
+URL = {https://essd.copernicus.org/preprints/essd-2025-184/},
+DOI = {10.5194/essd-2025-184}
 }
 ```
 
