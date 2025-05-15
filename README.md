@@ -1,9 +1,15 @@
+## News
+- [x] [2025.5.9] 《FarmSeg_VLM: A farmland remote sensing image segmentation method considering vision-language alignment》 received by **ISPRS Journal of Photogrammetry and Remote Sensing** and is currently in the proof stage. The associated code will be made publicly available upon completion of organization and finalization.
+- [x] [2025.4.25] 《A large-scale image-text dataset benchmark for farmland segmentation》 received as preprint by **Earth System Science Data** [Paper](https://essd.copernicus.org/preprints/essd-2025-184/essd-2025-184.pdf) [Datasets](https://doi.org/10.5281/zenodo.15099885)
+- [x] [2025.3] 《FSVLM: A Vision-Language Model for Remote Sensing Farmland Segmentation》 received by **IEEE TGRS** [Paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10851315) [code](https://github.com/WithoutOcean/FSVLM-A-Vision-Language-Model-for-Remote-Sensing-Farmland-Segmentation).
+
+
 **FSVLM: A Vision-Language Model for Remote Sensing Farmland Segmentation[[Paper](https://ieeexplore.ieee.org/document/10851315)]** <br />
-[Haiyang Wu],
+[Haiyang Wu](https://scholar.google.com/citations?user=VzEne7oAAAAJ&hl=zh-CN),
 [Zhuofei Du],
 [Dandan Zhong],
 [Yuze Wang],
-[Chao Tao]<br />
+[Chao Tao](https://scholar.google.com/citations?hl=zh-CN&user=g0Dvu7IAAAAJ)<br />
 
 ## Abstract
 Existing visual deep learning paradigms, which are based on labels, struggle to capture the intricate interrelationships between farmland and its surrounding environment and fail to account for temporal variations associated with the phenological cycle. These limitations lead to omissions and confusion in the recognition process, greatly impacting the accuracy and efficiency of farmland recognition. Language can accurately depict the spatial attributes of farmland, profoundly express the unique phenological landscapes of farmland that change with seasons and growth stages, and express the intricate interactions between these changes and environmental factors. This capability can address the deficiencies of label-based visual deep learning in understanding the complex features of farmland. This study explored, for the first time, the application of language-guided vision-language models (VLMs) for farmland segmentation. First, as current VLM research lacks a dedicated farmland image text (FIT)pair dataset, this study constructed an FIT dataset in two steps. Step 1, designed a semi-automatic text description annotation framework for farmland images based on 12 key factors influencing farmland segmentation. Step 2, used the framework to construct the FIT dataset. Then, a VLM for farmland segmentation (FSVLM) was designed by combining a semantic segmentation model with a multimodal large language model (LLM). Comparative experiments demonstrated that the proposed method outperforms existing farmland segmentation methods in both generalization and segmentation accuracy. In addition, a series of ablation experiments were conducted to examine the impacts of language descriptions of different semantic levels on the model’s farmland information extraction performance.For more details, please refer to the [paper](https://ieeexplore.ieee.org/document/10851315).
