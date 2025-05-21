@@ -15,14 +15,14 @@ DEFAULT_IM_START_TOKEN = "<|im_start|>"
 DEFAULT_IM_END_TOKEN = "<|im_end|>"
 
 SHORT_QUESTION_LIST = [
-    DEFAULT_IMAGE_TOKEN + "\n" + "Can you segment the {class_name} in this image?",
-    DEFAULT_IMAGE_TOKEN + "\n" + "Please segment the {class_name} in this image.",
+    DEFAULT_IMAGE_TOKEN + "\n" + "{text_name} Can you segment the {class_name} in this image?",
+    DEFAULT_IMAGE_TOKEN + "\n" + "{text_name} Please segment the {class_name} in this image.",
     DEFAULT_IMAGE_TOKEN
     + "\n"
-    + "What is {class_name} in this image? Please respond with segmentation mask.",
+    + "{text_name} What is {class_name} in this image? Please respond with segmentation mask.",
     DEFAULT_IMAGE_TOKEN
     + "\n"
-    + "What is {class_name} in this image? Please output segmentation mask.",
+    + "{text_name} What is {class_name} in this image? Please output segmentation mask.",
 ]
 
 LONG_QUESTION_LIST = [
