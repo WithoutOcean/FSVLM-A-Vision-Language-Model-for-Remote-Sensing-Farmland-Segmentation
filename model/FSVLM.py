@@ -91,9 +91,9 @@ class FSVLMMetaModel:
             self.vision_pretrained = kwargs.get("vision_pretrained", None)
         else:
             self.vision_pretrained = kwargs.get("vision_pretrained", None)
-            self.initialize_lisa_modules(self.config)
+            self.initialize_fsvlm_modules(self.config)
 
-    def initialize_lisa_modules(self, config):
+    def initialize_fsvlm_modules(self, config):
         # SAM即视觉编码加mask生成，前者冻结后者可训练
         self.visual_model = build_sam_vit_h(self.vision_pretrained)#初始化SAM预训练参数
         for param in self.visual_model.parameters():
@@ -216,7 +216,6 @@ class FSVLMForCausalLM(LlavaLlamaForCausalLM):
         label_list: List[torch.Tensor],
         resize_list: List[tuple],
         inference: bool = False,
-        encode_type="RSCLIP",
         **kwargs,
     ):
         image_embeddings = self.get_visual_embs(images)
@@ -251,7 +250,6 @@ class FSVLMForCausalLM(LlavaLlamaForCausalLM):
                     attention_mask=attention_masks[start_i:end_i],
                     input_ids=input_ids[start_i:end_i],
                     output_hidden_states=True,
-                    encode_type=encode_type
                 )
                 output_hidden_states.append(output_i.hidden_states)
                 torch.cuda.empty_cache()
@@ -282,7 +280,6 @@ class FSVLMForCausalLM(LlavaLlamaForCausalLM):
                 labels=labels,
                 output_attentions=True,
                 output_hidden_states=True,
-                encode_type=encode_type
             )
           
             output_hidden_states = output.hidden_states
