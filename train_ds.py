@@ -48,12 +48,12 @@ def parse_args(args):
     parser.add_argument("--load_in_8bit", action="store_true", default=False)
     parser.add_argument("--load_in_4bit", action="store_true", default=False)
     parser.add_argument(
-        "--dataset", default="orgin", type=str
+        "--dataset", default="farmsegvl", type=str
     ) #||orgin||sem_seg||aug_compe
     parser.add_argument("--sample_rates", default="1", type=str)
-    parser.add_argument("--reason_seg_data", default="dataset", type=str)
+    parser.add_argument("--farmland_seg_data", default="farmsegvl", type=str)
     parser.add_argument("--val_dataset", default="dataset", type=str)
-    parser.add_argument("--dataset_dir", default="./dataset/your data", type=str)
+    parser.add_argument("--dataset_dir", default="your data root path", type=str)
     parser.add_argument("--log_base_dir", default="./runs", type=str)
     parser.add_argument("--exp_name", default="fsvlm", type=str)
     parser.add_argument("--epochs", default=10, type=int)
@@ -82,7 +82,7 @@ def parse_args(args):
     parser.add_argument("--exclude_val", action="store_true", default=False)
     parser.add_argument("--no_eval", action="store_true", default=False)
     parser.add_argument("--eval_only", action="store_true", default=False)
-    parser.add_argument("--vision_pretrained", default="/opt/data/private/ckpt/PATH_TO_SAM_ViT-H/sam_vit_h_4b8939.pth", type=str)  ###
+    parser.add_argument("--vision_pretrained", default="PATH_TO_SAM_ViT-H/sam_vit_h_4b8939.pth", type=str)  ###
     # parser.add_argument("--RSCLIP_weight_path", default="/opt/data/private/FSVLM1.0/RS5MVIT/RS5M_ViT-H-14.pt", type=str)  ###
     # parser.add_argument("--GeoRS_path", default="/opt/data/private/FSVLM1.0/RS5Model/open_clip_pytorch_model.bin", type=str)  ###
     parser.add_argument("--out_dim", default=256, type=int)
@@ -155,14 +155,22 @@ def main(args):
     model.enable_input_require_grads()
     model.gradient_checkpointing_enable()
 
-    model.get_model().initialize_vision_modules(model.get_model().config,encode_type=args.encode_type,RSCLIP_weight_path=args.RSCLIP_weight_path,GeoRS_path=args.GeoRS_path)#llava初始化
+    model.get_model().initialize_vision_modules(model.get_model().config)
     vision_tower = model.get_model().get_vision_tower()
     vision_tower.to(dtype=torch_dtype, device=args.local_rank)
-   
+    if not args.eval_only:
+        model.get_model().initialize_fsvlm_modules(model.get_model().config)
+
     for p in vision_tower.parameters():
         p.requires_grad = False
     for p in model.get_model().mm_projector.parameters():
         p.requires_grad = False
+
+    # model.get_model().initialize_vision_modules(model.get_model().config,encode_type=args.encode_type,RSCLIP_weight_path=args.RSCLIP_weight_path,GeoRS_path=args.GeoRS_path)#llava初始化
+    # for p in vision_tower.parameters():
+    #     p.requires_grad = False
+    # for p in model.get_model().mm_projector.parameters():
+    #     p.requires_grad = False
 
     conversation_lib.default_conversation = conversation_lib.conv_templates[
         args.conv_type
@@ -242,7 +250,7 @@ def main(args):
         exclude_val=args.exclude_val,
         dataset=args.dataset,
         sample_rate=[float(x) for x in args.sample_rates.split(",")],
-        orgin_data=args.reason_seg_data,
+        seg_data=args.farmland_seg_data,
         explanatory=args.explanatory,
     )
 
@@ -452,7 +460,7 @@ def train(
 
             data_time.update(time.time() - end)
             input_dict = dict_to_cuda(input_dict)
-            input_dict["encode_type"]=args.encode_type
+            
             if args.precision == "fp16":
                 input_dict["images"] = input_dict["images"].half()
                 input_dict["images_clip"] = input_dict["images_clip"].half()
