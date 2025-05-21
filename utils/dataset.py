@@ -253,9 +253,8 @@ class HybridDataset(torch.utils.data.Dataset):
 
 def load_data(base_dir):
     #data_path
-    images=glob.glob(os.path.join(base_dir,"Farmland_Dataset","test","img","*.tif"))
+    images=glob.glob(os.path.join(base_dir,"test","img","*.png"))
     masks=[x.replace("img","lbl") for x in images]
-    masks=[x.replace("tif","png") for x in masks]
     return images,masks
 class ValDataset(torch.utils.data.Dataset):
     pixel_mean = torch.Tensor([123.675, 116.28, 103.53]).view(-1, 1, 1)
