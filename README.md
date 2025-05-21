@@ -27,9 +27,30 @@ pip install flash-attn --no-build-isolation
 
 1. farmland image-text datasets: [FarmSeg-VL](https://doi.org/10.5281/zenodo.15099885)
 
-2. Referring segmentation datasets: [LoveDA](https://github.com/Junjue-Wang/LoveDA?tab=readme-ov-file) 
+2. Referring segmentation datasets: [LoveDA](https://github.com/Junjue-Wang/LoveDA?tab=readme-ov-file)
 
+Download them from the above links, and organize them as follows.
+```
+├── dataset
+│   ├── train
+│   │   ├── img
+│   │   └── lbl
+|   │   └── json 
+│   ├── test
+│   │   ├── img
+│   │   └── lbl
+|   │   └── json 
+│   ├── val
+│   │   ├── img
+│   │   └── lbl
+|   │   └── json 
+```
 
+Replace the data path with the root directory of your data.
+```
+    parser.add_argument("--val_dataset", default="dyour data root path", type=str)
+    parser.add_argument("--dataset_dir", default="your data root path", type=str)
+```
 
 ### Pre-trained weights
 
