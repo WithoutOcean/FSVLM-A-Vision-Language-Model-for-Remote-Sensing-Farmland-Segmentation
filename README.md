@@ -64,7 +64,7 @@ CUDA_VISIBLE_DEVICES="" python3 merge_lora_weights_and_save_hf_model.py \
 
 ## Inference 
 ```
-CUDA_VISIBLE_DEVICES=0 python chat.py --version='your weight'
+python test.py --version='your weight'
 ```
 
 ## Citation 
