@@ -206,9 +206,9 @@ class HybridDataset(torch.utils.data.Dataset):
         image_size: int = 224,
         num_classes_per_sample: int = 3,
         exclude_val=False,
-        dataset="orgin",
+        dataset="farmsegvl",
         sample_rate=[9, 3, 3, 1],
-        orgin_data="FIT|LoveDA",
+        seg_data="FIT|LoveDA",
         explanatory=0.1,
     ):
         self.exclude_val = exclude_val
@@ -226,7 +226,7 @@ class HybridDataset(torch.utils.data.Dataset):
         self.datasets = dataset.split("||")
         self.all_datasets = []
         for dataset in self.datasets:
-            if dataset == "orgin":
+            if dataset == "farmsegvl":
                 self.all_datasets.append(
                     orginDataset(
                         base_image_dir,
@@ -237,7 +237,7 @@ class HybridDataset(torch.utils.data.Dataset):
                         image_size,
                         num_classes_per_sample,
                         exclude_val,
-                        orgin_data,
+                        seg_data,
                     )
                 )
            
