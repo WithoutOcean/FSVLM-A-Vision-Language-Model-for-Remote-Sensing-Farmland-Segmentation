@@ -52,7 +52,7 @@ def parse_args(args):
     ) #||orgin||sem_seg||aug_compe
     parser.add_argument("--sample_rates", default="1", type=str)
     parser.add_argument("--farmland_seg_data", default="farmsegvl", type=str)
-    parser.add_argument("--val_dataset", default="dataset", type=str)
+    parser.add_argument("--val_dataset", default="dyour data root path", type=str)
     parser.add_argument("--dataset_dir", default="your data root path", type=str)
     parser.add_argument("--log_base_dir", default="./runs", type=str)
     parser.add_argument("--exp_name", default="fsvlm", type=str)
