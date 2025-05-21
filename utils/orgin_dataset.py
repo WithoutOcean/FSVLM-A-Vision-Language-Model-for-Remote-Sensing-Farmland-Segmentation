@@ -18,7 +18,7 @@ from .utils import ANSWER_LIST, SHORT_QUESTION_LIST
 
 
 sample_ratio=0.7
-def init_dataset(base_image_dir):
+def init_farmsegvl(base_image_dir):
     # 取classes
     classes = []
     with open("./utils/CLASS_NAME") as f:
@@ -28,7 +28,7 @@ def init_dataset(base_image_dir):
     images = []
     # 取label路径
     labels = glob.glob(
-        os.path.join(base_image_dir, "dataset", "lbl", "*.png")
+        os.path.join(base_image_dir, "train", "lbl", "*.png")
     )
     # 取image路径
     images = [
