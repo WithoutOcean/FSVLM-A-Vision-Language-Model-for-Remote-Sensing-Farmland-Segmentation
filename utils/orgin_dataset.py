@@ -53,7 +53,7 @@ class orginDataset(torch.utils.data.Dataset):
         self.tokenizer = tokenizer
         self.precision = precision
         self.transform = ResizeLongestSide(image_size)
-        #self.clip_image_processor = CLIPImageProcessor.from_pretrained(vision_tower)
+        self.clip_image_processor = CLIPImageProcessor.from_pretrained(vision_tower)
 
         self.short_question_list = SHORT_QUESTION_LIST
         self.answer_list = ANSWER_LIST
@@ -81,15 +81,17 @@ class orginDataset(torch.utils.data.Dataset):
 
     def __getitem__(self, idx):
         ds = self.sem_seg_datas
-        images, labels,texts = self.data2list[ds]
+        texts,images, labels= self.data2list[ds]
         # print("refer: ", len(image))
         idx = random.randint(0, len(images) - 1)
         image_path = images[idx]
         label_path = labels[idx]
         text_path=texts[idx]
-        f = open(text_path, encoding = 'utf-8')
-        path=f.read()
-        text =json.loads(path)['img_description_eg']
+        with open(text_path, "r", encoding="utf-8") as f:
+            data = json.load(f) 
+        # f = open(text_path, encoding = 'utf-8')
+        # path=f.read()
+        text =data['img_description_eg']
         sampled_classes=text
         questions = []
         answers = []
