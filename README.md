@@ -27,7 +27,7 @@ pip install flash-attn --no-build-isolation
 
 1. farmland image-text datasets: [FarmSeg-VL](https://doi.org/10.5281/zenodo.15099885)
 
-2. Referring segmentation datasets: [LoveDA](https://github.com/Junjue-Wang/LoveDA?tab=readme-ov-file)
+2. segmentation datasets: [LoveDA](https://github.com/Junjue-Wang/LoveDA?tab=readme-ov-file)
 
 Download them from the above links, and organize them as follows.
 ```
