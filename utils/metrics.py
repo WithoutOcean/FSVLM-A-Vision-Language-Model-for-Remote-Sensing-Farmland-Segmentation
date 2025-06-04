@@ -19,7 +19,10 @@ class Evaluator(object):
         intersection = np.diag(self.confusion_matrix)
         union = np.sum(self.confusion_matrix, axis=1) + np.sum(self.confusion_matrix, axis=0) - intersection
         iou = intersection / union
-        return iou.mean()  # 取平均值以确保返回标量
+        dice=2*intersection/(np.sum(self.confusion_matrix, axis=1) + np.sum(self.confusion_matrix, axis=0))
+        recall=intersection/np.sum(self.confusion_matrix, axis=0)
+        return iou.mean(), dice.mean(),recall.mean() # 取平均值以确保返回标量
+    
     def calculate_giou(self):
         iou = self.calculate_iou()
         giou = 1 - iou
@@ -31,7 +34,7 @@ class Evaluator(object):
         ciou = giou / (1 - giou)
         self.confusion_matrix_ciou = np.zeros((self.num_class,) * 2)
         return ciou
-
+    
 
     def Pixel_Accuracy(self):
         Acc = np.diag(self.confusion_matrix).sum() / self.confusion_matrix.sum()
