@@ -1,4 +1,5 @@
 ## News
+- [x] [2025.7.10] **FSVLM model parameters have been released** [Model](https://pan.baidu.com/s/1sX8mhJ3NftS9w1lmFczKvg?pwd=8888). 
 - [x] [2025.5.15] 《FarmSeg_VLM: A farmland remote sensing image segmentation method considering vision-language alignment》 received by **ISPRS Journal of Photogrammetry and Remote Sensing** [Paper](https://doi.org/10.1016/j.isprsjprs.2025.05.010). The associated code will be made publicly available upon completion of organization and finalization.
 - [x] [2025.5.9] 《FarmSeg_VLM: A farmland remote sensing image segmentation method considering vision-language alignment》 received by **ISPRS Journal of Photogrammetry and Remote Sensing** and is currently in the proof stage. The associated code will be made publicly available upon completion of organization and finalization.
 - [x] [2025.4.25] 《A large-scale image-text dataset benchmark for farmland segmentation》 received as preprint by **Earth System Science Data** [Paper](https://essd.copernicus.org/preprints/essd-2025-184/essd-2025-184.pdf) [Datasets](https://doi.org/10.5281/zenodo.15099885)
