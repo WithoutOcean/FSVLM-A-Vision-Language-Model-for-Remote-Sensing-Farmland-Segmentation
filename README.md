@@ -26,7 +26,7 @@ pip install flash-attn --no-build-isolation
 ## Training
 ### Training Data Preparation
 
-1. farmland image-text datasets: [FarmSeg-VL](https://zenodo.org/records/15860191)
+1. farmland image-text datasets: （1）zenodo：[FarmSeg-VL](https://zenodo.org/records/15860191) （2）Baidu Netdisk [FarmSeg-VL](https://pan.baidu.com/s/1w1tO4e4_zJwVmqtUUloaew?pwd=k65o ) 
 
 2. segmentation datasets: [LoveDA](https://github.com/Junjue-Wang/LoveDA?tab=readme-ov-file)
 
